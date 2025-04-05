@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>see parking management system in c</title>
+  <style>
+    h1{border: 4px solid red;
+      text-align: center;
+      
+    }
+    h2{ border: 3px solid red;
+      text-align: center;
+      
+    }
+    h3{border: 2px solid red;
+      text-align: center;
+      
+    }
+    h4{border: 1px solid red;
+      text-align: center;
+      
+    }
+    
+    body{
+      overflow-x: clip;
+    }
+  </style>
+  </head>
+  <body>
+    <h1>WELCOME TO PARKING MANAGEMENT SYSTEM PROJECT IN C LANGUAGE</h1>
+    
+    <h1>SEE PARKING MANAGEMENT SYSTEM IN C</h1>
+    <h2>Introduction</h2>
+    Creating a Parking Management System in C programming is a great way to
+    enhance your coding skills. This project will help you understand the
+    fundamentals of C programming, including user interface design, file
+    handling, and data management. In this guide, we’ll walk you through the
+    entire process, from setting up your environment to running your final
+    program. Let’s get started!
+    <br />
+    Step-by-Step Guide
+    <br />
+    <h2>1.Set Up Your Development Environment</h2>
+    Before you start coding, ensure you have a C compiler installed on your
+    computer. For Windows users, you can use Code::Blocks or Dev-C++. For Linux
+    and Mac users, you can use gcc, which is included in most distributions.
+    <br />
+    <h3>setup of dev C++ in Windows</h3>
+  <b>For video explanation : </b><a href="https://youtu.be/rVp3uZ8p7UE?si=wusTyVPYItKxPYt5" target="_blank">click here</a>
+  <br>
+    To set up Dev-C++ on Windows, download the appropriate installer from a
+    reliable source like Embarcadero, run the installer, follow the prompts, and
+    then you can launch the IDE and start coding. Here's a more detailed guide:
+    <br />
+    <h4>1. Download Dev-C++:</h4>
+    
+    Choose the right version: For most users, the "Embarcadero Dev-C++" fork,
+    which includes both the IDE and the compiler, is recommended. Download from
+    a reliable source: You can download it from Embarcadero's website or
+    SourceForge. Save the file: Save the downloaded .exe file to a location on
+    your computer.
+    <br />
+    <h4>2. Installation:</h4>
+    <br />
+    Run the installer: Double-click the downloaded .exe file to start the
+    installation process.
+    <br />
+    Follow the prompts:
+    <br />
+    Language selection: Choose your preferred language.
+    <br />
+    License agreement: Read and click "I Agree" to the license terms.
+    <br />
+    Component selection: Choose which components to install. The Dev-C++ program
+    file is required, while language files are optional.
+    <br />
+    Installation location: Select the directory where you want to install
+    Dev-C++.
+    <br />
+    Start installation: Click "Install" to begin the installation process.
+    <br />
+    Wait for completion: The installation process will take some time.
+    <br />
+    Launch Dev-C++: Once the installation is complete, you can launch the
+    Dev-C++ IDE.
+    <br />
+    <h3>setup of Code::Block in Windows</h3>
+    <b>For video explanation : </b><a href="https://youtu.be/8DRt2CRD6X8?si=TXZPKSDq1GsFFJfv" target="_blank">click me</a>
+    <br>
+    To set up Code::Blocks on Windows, download the appropriate installer from
+    the Code::Blocks website, run it, and follow the on-screen instructions,
+    ensuring you install MinGW (or another compiler if you prefer) along with
+    Code::Blocks.
+    <br />
+    Here's a more detailed breakdown:
+    <br />
+    <h4>1. Download the Installer:</h4>
+    
+    Go to the Code::Blocks downloads page.
+    <br />
+    Select the "Binary release" option for Windows.
+    <br />
+    Download the installer package that includes MinGW (e.g.,
+    codeblocks-20.03mingw-setup.exe).
+    <br />
+    <h4>2. Run the Installer:</h4>
+    <br />
+    Double-click the downloaded .exe file to start the installation process.
+    <br />
+    Follow the on-screen instructions, accepting the default options or
+    customizing them as needed.
+    <br />
+    Make sure to install MinGW (or another compiler) during the installation
+    process.
+    <br />
+    <h4>3. Verify Compiler Path (Optional):</h4>
+    
+    After installation, you can verify the compiler's path in Code::Blocks:
+    <br />
+    Go to "Settings" > "Compiler...".
+    <br />
+    In the "Selected Compiler" section, choose "GNU GCC Compiler".
+    <br />
+    Go to the "Toolchain Executables" tab.
+    <br />
+    Check the "Compiler's Installation Directory".
+    <br />
+    Ensure it's set to the MinGW directory (e.g., C:\Program
+    Files\CodeBlocks\MinGW).
+    <br />
+    <h4>4. Start Coding:</h4>
+    <h3>setup of gcc for mac</h3>
+    <b>For video explanation :</b><a href="https://youtu.be/lGsyqgpMAYY?si=xbpBMtswJah7fgmR" target="_blank">click here</a>
+    <br>
+    To set up GCC (the GNU Compiler Collection) on macOS, you can use Homebrew,
+    a package manager, by running brew install gcc in the terminal.
+    <br />
+    Here's a more detailed breakdown:
+    <br />
+    <h4>1. Install Homebrew (if you don't have it):</h4>
+    <br />
+    Open Terminal (Applications > Utilities > Terminal).
+    <br />
+    Run the following command: /bin/bash -c "$(curl -fsSL
+    https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)".
+    <br />
+    <h4>2. Install GCC:</h4>
+    
+    Once Homebrew is installed, run the following command in Terminal: brew
+    install gcc.
+    <br />
+    This will download and install the GCC compiler and related tools.
+    <br />
+    <h4>3. Verify Installation and Usage:</h4>
+    
+    After installation, you can verify that GCC is installed by running gcc
+    --version in Terminal.
+    <br />
+    You might need to create a symbolic link to use gcc instead of gcc-version.
+    <br />
+    For example, if Homebrew installs GCC version 14, you might need to create a
+    symbolic link using ln -s /opt/homebrew/bin/gcc-14 /opt/homebrew/bin/gcc.
+    <br />
+    This allows you to compile C/C++ code using the command gcc filename.c -o
+    output.
+    <br />
+    Alternative Method (Using Xcode Command Line Tools):
+    <br />
+    You can also install the Xcode Command Line Tools, which include GCC, by
+    opening Terminal and running xcode-select --install.
+    <br />
+    Follow the prompts to install the Command Line Tools.
+    <br />
+    Choosing a Compiler:
+    <br />
+    macOS comes with Clang, a C/C++ compiler developed by Apple, which is a good
+    alternative to GCC.
+    <br />
+    Clang is optimized for Apple's hardware and tooling.
+    <br />
+    You can choose to use either Clang or GCC, depending on your needs and
+    preferences.
+    <br />
+    <h3>setup of gcc in Linux</h3>
+    <b>For video explanation :</b><a href="https://youtu.be/oLjN6jAg-sY?si=46Q_HrzzTb5-WY06" target="_blank">click here</a>
+    <br />
+    To install GCC (GNU Compiler Collection) on a Linux system, open a terminal,
+    update your package lists using sudo apt update, and then install GCC using
+    sudo apt install gcc or sudo apt install build-essential.
+    <br />
+    Here's a more detailed step-by-step guide:
+    <br />
+    <h4>1. Open a Terminal:</h4>
+    
+    On most Linux distributions, you can open a terminal by pressing Ctrl+Alt+T
+    or searching for "Terminal" in your applications menu.
+    <br />
+    <h4>2. Update Package Lists:</h4>
+   
+    Before installing any packages, it's good practice to update your system's
+    package lists to ensure you have the latest information about available
+    software.
+    <br />
+    Run the following command in the terminal:
+    <br />
+    <b>Code</b>
+    <br />
+    sudo apt update
+    <br />
+    You may need to enter your password when prompted.
+    <br />
+    <h4>3. Install GCC:</h4>
+    
+    You can install GCC using either of the following commands:
+    <br />
+    Install GCC directly:
+    <br />
+    <b>Code</b>
+    <br />
+    sudo apt install gcc
+    <br />
+    This command installs the GCC compiler itself and Install build-essential
+    package (recommended).
+    <br />
+    <b>code</b>
+    <br />
+    sudo apt install build-essential
+    <br />
+    The build-essential package includes GCC along with other essential tools
+    for software development, such as make.
+    <br />
+    <h4>4. Verify Installation:</h4>
+    
+    After the installation is complete, verify that GCC is installed correctly
+    by checking the compiler version:
+    <br />
+    <b>Code</b>
+    <br />
+    gcc --version
+    <br />
+    This command will display the installed GCC version.
+    <br />
+    <h4>5. (Optional) Install G++ (C++ Compiler):</h4>
+   
+    If you plan to work with C++ programs, you'll also need the G++ compiler.
+    You can install it using:
+    <br />
+    sudo apt install g++
+    <br />
+    Or, if you installed build-essential, G++ should already be included.
+    <br />
+    Example (Ubuntu/Debian):
+    <br />
+    <b>Code</b>
+    <br />
+    sudo apt update # Update package lists
+    <br />
+    sudo apt install gcc # Install GCC
+    <br />
+    gcc --version # Verify installation
+    <br />
+    Example (RHEL/CentOS/Fedora):
+    <br />
+    <b>Code</b>
+    <br />
+    sudo yum update # Update package lists
+    <br />
+    sudo yum install gcc # Install GCC
+    <br />
+    gcc --version # Verify installati
+    <br />
+    <h2>Create Your Project Files</h2>
+    
+    Start by creating a new project in your C development environment. Name your
+    project ParkingManagementSystem. Inside your project folder, create a file
+    named main.c. This will be the main file where you’ll write your code.
+    <br />
+    Before going to the code of the project you need to learn basics of c language:
+    <br>
+    <b>For notes:</b>
+    <br>
+    <a href="https://www.tpointtech.com/c-programming-language-tutorial" target="_blank">click me</a> to learn basics of c.
+    <br>
+    <b>For video explanation : </b><a href="https://youtu.be/irqbmMNs2Bo?si=UK9Ye1IsojQIPKy5" target="_blank">click me</a>.
+    <img src="https://img.freepik.com/premium-vector/transportation-3d-vector-icon-set-bicycle-scooter-car-van-combine-truck-bus_163454-937.jpg?w=1800" width="400"><br>
+    <B>This project is done using :</B>
+    <ol>
+      <li>C language. </li>
+      <li>C language file manipulation system to store data in secondary memory. </li>
+    </ol>
+    <h1>How this parking management system is different from other parking management systems in C ?</h1>
+    The other software shows a menu with many options to enter for different vehicles, which is not convenient for the user. The user has to press multiple options which also affect the speed of the software. this software take only the user inputs and then if the vehicle was parked then return it to the owner and print the bill and slot in which the vehicle was parkedthen print the time and date on screen .If the vehicle is not parked then print the slot number in which the vehicle has to be parked and print the time and date on screen. 
+    <br>
+    At the time of vehicle arrival and at the time of departure, the time was entered manually in the system so it could be wrongly entered by the admin because human mistakes are very common.this system print the time of the system on screen whenever required not need to entered by the user manually <div class=""></div>
+    <br> 
+    <b> By executing this code output can be seen by the user :</b>
+    <h2>code of the project</h2>
+    <button id="myButton">Click me to view and hide the content</button>
+    <div id="content" style="display:none">
+    #include &lt; stdio.h &gt;<br>
+    #include &lt; conio.h &gt;<br>
+    #include &lt; windows.h &gt;<br>
+    #include &lt; string.h &gt;<br>
+    #include &lt; stdlib.h &gt;<br>
+    #include &lt; time.h &gt;<br>
+    struct car_vehicle<br>
+    {<br>
+      long long int car_seconds;<br>
+      char car_owner_name[30];<br>
+      long long int car_owner_mobile_number;<br>
+      char time_of_arrival[30];<br>
+      char car_number[12];<br>
+    };<br>
+    struct truck_vehicle<br>
+    {<br>
+      long long int truck_seconds;<br>
+      char truck_owner_name[30];<br>
+      long long int truck_owner_mobile_number;<br>
+      char time_of_arrival[30];<br>
+      char truck_number[12];<br>
+    };<br>
+    struct bike_vehicle<br>
+    {<br>
+      long long int bike_seconds;<br>
+      char bike_owner_name[30];<br>
+      long long int bike_owner_mobile_number;<br>
+      char time_of_arrival[30];<br>
+      char bike_number[12];<br>
+    };<br>
+    struct bus_vehicle<br>
+    {   <br>
+        long long int bus_seconds; <br>
+      char bus_owner_name[30];<br>
+      long long int bus_owner_mobile_number;<br>
+      char time_of_arrival[30];<br>
+      char bus_number[12];<br>
+    };<br>
+    int main()<br>
+    {<br>
+      int i=10;<br>
+      int count=0;<br>
+    char owner_name[30];<br>
+    long long int owner_mobile_number;<br>
+    char vehicle_name[i];<br>
+    char vehicle_number[i];<br>
+    int vehicle_name_length;<br>
+    char date_string[20];<br>
+    int total_space , car_space ,truck_space , bike_space , bus_space , car_cost , truck_cost , bike_cost , bus_cost ;<br>
+    int information_of_space_cost[9] ;<br>
+    char car[]="car",truck[]="truck",bike[]="bike",bus[]="bus";<br>
+    FILE *space_cost_information;<br>
+      int car_max_space,truck_max_space,bike_max_space,bus_max_space;<br>
+    space_cost_information=fopen("space_cost_of_vehicles.txt","rb");<br>
+    {<br>
+    enter_again:<br>
+    printf("enter the total number of space in parking stand:");<br>
+    scanf("%d",&total_space);<br>
+    information_of_space_cost[0]=total_space;<br>
+    printf("\nenter the total number of space for car in parking stand:");<br>
+    scanf("%d",&car_space);<br>
+    printf("cost for parking car at stand for one day is:");<br>
+    scanf("%d",&car_cost);<br>
+    information_of_space_cost[1]=car_space;<br>
+    information_of_space_cost[2]=car_cost;<br>
+    printf("\nenter the total number of space for truck in parking stand:");<br>
+    scanf("%d",&truck_space);<br>
+    printf("cost for parking truck at stand for one day is:");<br>
+    scanf("%d",&truck_cost);<br>
+    information_of_space_cost[3]=truck_space;<br>
+    information_of_space_cost[4]=truck_cost;<br>
+    printf("\nenter the total number of space for bike in parking stand:");<br>
+    scanf("%d",&bike_space);<br>
+    printf("cost for parking bike at stand for one day is:");<br>
+    scanf("%d",&bike_cost);<br>
+    information_of_space_cost[5]=bike_space;<br>
+    information_of_space_cost[6]=bike_cost;<br>
+    printf("\nenter the total number of space for bus in parking stand:");<br>
+    scanf("%d",&bus_space);<br>
+    printf("cost for parking bus at stand for one day is:");<br>
+    scanf("%d",&bus_cost);<br>
+    information_of_space_cost[7]=bus_space;<br>
+    information_of_space_cost[8]=bus_cost;<br>
+    if(car_space+truck_space+bike_space+bus_space!=total_space)<br>
+    {<br>
+      system("cls");<br>
+      printf("please fill information carefully\n\n");<br>
+      time_t s;<br>
+            struct tm* curr_time;<br>
+            s=time(NULL);<br>
+            curr_time = localtime(&s);<br>
+            printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+            strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+            printf("%s\n",date_string);<br>
+      goto enter_again;<br>
+    }<br>
+}<br>
+fclose(space_cost_information);<br>
+    long int days;<br>
+      struct car_vehicle CAR[car_space];<br>
+      struct truck_vehicle TRUCK[truck_space];<br>
+      struct bike_vehicle BIKE[bike_space];<br>
+      struct bus_vehicle BUS[bus_space];<br>
+    space_cost_information=fopen("space_cost_of_vehicles","r");<br>
+    fseek(space_cost_information,0,SEEK_END);<br>
+    long size=ftell(space_cost_information);<br>
+if(size==0)<br>
+{<br>
+    char name[30]="www";<br>
+    int g=12;<br>
+    char vehicle_no[12]="www";<br>
+    long long int sec=0;<br>
+    int h=0;<br>
+    FILE *car_information;<br>
+    car_information=fopen("car_park_details","w");<br>
+    for(car_space=0;car_space<information_of_space_cost[1];car_space++)<br>
+    {<br>
+        CAR[car_space].car_owner_mobile_number=0;<br>
+        CAR[car_space].car_seconds=0;<br>
+    for(g=0;g<12;g++)<br>
+      {<br>
+      CAR[car_space].car_number[g]=vehicle_no[g];<br>
+      }<br>
+      for(h=0;h<30;h++)<br>
+      {<br>
+        CAR[car_space].car_owner_name[h]=name[h];<br>
+      }<br>
+    }<br>
+    fwrite(CAR,sizeof(struct car_vehicle),information_of_space_cost[1],car_information);<br>
+    fclose(car_information);<br>
+    FILE *truck_information;<br>
+    truck_information=fopen("truck_park_details","w");<br>
+    for(truck_space=0;truck_space<information_of_space_cost[3];truck_space++)<br>
+{<br>
+    TRUCK[truck_space].truck_owner_mobile_number=0;<br>
+    TRUCK[truck_space].truck_seconds=0;<br>
+for(g=0;g<12;g++)<br>
+  {<br>
+  TRUCK[truck_space].truck_number[g]=vehicle_no[g];<br>
+  }<br>
+  for(h=0;h<30;h++)<br>
+  {<br>
+    TRUCK[truck_space].truck_owner_name[h]=name[h];<br>
+  }<br>
+}<br>
+fwrite(TRUCK,sizeof(struct truck_vehicle),information_of_space_cost[3],truck_information);<br>
+fclose(truck_information);FILE *bike_information;<br>
+
+FILE *bike_information;<br>
+
+bike_information=fopen("bike_park_details","w");<br>
+
+for(bike_space=0;bike_space<information_of_space_cost[5];bike_space++)<br>
+{<br>
+   BIKE[bike_space].bike_owner_mobile_number=0;<br>
+   BIKE[bike_space].bike_seconds=0;<br>
+for(g=0;g<12;g++)<br>
+  {<br>
+  BIKE[bike_space].bike_number[g]=vehicle_no[g];<br>
+  }<br>
+  for(h=0;h<30;h++)<br>
+  {<br>
+    BIKE[bike_space].bike_owner_name[h]=name[h];<br>
+  }<br>
+}<br>
+fwrite(BIKE,sizeof(struct bike_vehicle),information_of_space_cost[5],bike_information);<br>
+fclose(bike_information);<br>
+FILE *bus_information;<br>
+bus_information=fopen("bus_park_details","w");<br>
+for(bus_space=0;bus_space<information_of_space_cost[7];bus_space++)<br>
+{<br>
+    BUS[bus_space].bus_owner_mobile_number=0;<br>
+    BUS[bus_space].bus_seconds=0;<br>
+for(g=0;g<12;g++)<br>
+  {<br>
+  BUS[bus_space].bus_number[g]=vehicle_no[g];<br>
+  }<br>
+  for(h=0;h<30;h++)<br>
+  {<br>
+    BUS[bus_space].bus_owner_name[h]=name[h];<br>
+  }<br>
+}<br>
+fwrite(BUS,sizeof(struct bus_vehicle),information_of_space_cost[7],bus_information);<br>
+fclose(bus_information);<br>
+fclose(space_cost_information);<br>
+<br>
+while(1<2)<br>
+{<br>
+  space_cost_information=fopen("space_cost_of_vehicles","rb");<br>
+  fread(information_of_space_cost,sizeof(int),9,space_cost_information);<br>
+  fclose(space_cost_information);<br>
+  printf("\n");<br>
+  enter_name_carefully:<br>
+printf("enter the name of vehicle owner: ");<br>
+scanf("\n");<br>
+gets(owner_name);<br>
+int owner_name_length=strlen(owner_name);
+if(owner_name_length<3)<br>
+{<br>
+  goto enter_name_carefully;<br>
+}<br>
+for(owner_name_length=0;owner_name[owner_name_length]!='\0';owner_name_length++){  <br>
+if(((owner_name[owner_name_length]>-1)&&(owner_name[owner_name_length]<32))((owner_name[owner_name_length]>33)&&(owner_name[owner_name_length]<65))((owner_name[owner_name_length]>90)&&(owner_name[owner_name_length]<97))((owner_name[owner_name_length]>122)&&(owner_name[owner_name_length]<128)))<br>
+{<br>
+  goto enter_name_carefully;<br>
+}<br>
+else if((owner_name[owner_name_length]==32)&&(owner_name[owner_name_length+1]==32))<br>
+{<br>
+goto enter_name_carefully;  <br>
+}<br>
+}<br>
+for(owner_name_length=0;owner_name[owner_name_length]!='\0';owner_name_length++)<br>
+{<br>
+  if((owner_name[owner_name_length]>96)&&(owner_name[owner_name_length]<123))<br>
+  {<br><br>
+  owner_name[owner_name_length]=owner_name[owner_name_length]-32;<br>
+  }<br>
+  else<br>
+  {<br>
+  owner_name[owner_name_length]=owner_name[owner_name_length]  ;<br>
+  }<br>
+}<br>
+printf("enter vehicle name:");<br>
+scanf("\n");<br>
+gets(vehicle_name);<br>
+vehicle_name_length=strlen(vehicle_name);<br>
+for(vehicle_name_length=0;vehicle_name[vehicle_name_length]!='\0';vehicle_name_length++)<br>
+{<br>
+  if(vehicle_name[vehicle_name_length]>64&&vehicle_name[vehicle_name_length]<91)<br>
+  {<br>
+    vehicle_name[vehicle_name_length]=vehicle_name[vehicle_name_length]+32;<br>
+  }<br>
+  else if(vehicle_name[vehicle_name_length]>96&&vehicle_name[vehicle_name_length]<123)<br>
+  {<br>
+    vehicle_name[vehicle_name_length]=vehicle_name[vehicle_name_length];<br>
+  }<br>
+}<br>
+if(strcmp(vehicle_name,car)==0||strcmp(vehicle_name,truck)==0||strcmp(vehicle_name,bike)==0||strcmp(vehicle_name,bus)==0)<br>
+{<br>
+  enter_carefully:<br>
+    count=0;<br>
+printf("enter vehicle_number:");<br>
+scanf("\n");<br>
+gets(vehicle_number);<br>
+int vehicle_number_length=strlen(vehicle_number);<br>
+for(vehicle_number_length=0;vehicle_number[vehicle_number_length]!='\0';vehicle_number_length++)<br>
+{<br>
+if(vehicle_number[vehicle_number_length]>96&&vehicle_number[vehicle_number_length]<123)<br>
+{<br>
+  vehicle_number[vehicle_number_length]=vehicle_number[vehicle_number_length]-32;<br>
+}<br>
+else <br>
+{<br>
+  vehicle_number[vehicle_number_length]=vehicle_number[vehicle_number_length];<br>
+}<br>
+}<br>
+for(vehicle_number_length=0;vehicle_number[vehicle_number_length]!='\0';vehicle_number_length++)<br>
+{
+  if((vehicle_number[vehicle_number_length]>-1&&vehicle_number[vehicle_number_length]<48)(vehicle_number[vehicle_number_length]>57&&vehicle_number[
+    vehicle_number_length]<65)(vehicle_number[vehicle_number_length]>90&&vehicle_number[vehicle_number_length]<97)(vehicle_number[vehicle_number_length]>122&&vehicle_number[vehicle_number_length]<128))<br>
+{<br>
+count++;  <br>
+}  <br>
+}<br>
+if(vehicle_number_length>10||vehicle_number_length<9)<br>
+{<br>
+  goto enter_carefully;<br>
+}<br>
+if(vehicle_number_length==9)<br>
+{<br>
+if((count==0)&&((vehicle_number[2]==48)&&(vehicle_number[3]==48))((vehicle_number[5]==48)&&(vehicle_number[6]==48)&&(vehicle_number[7]==48)&&(vehicle_number[8]==48))((vehicle_number[2]>-1)&&(vehicle_number[2]<48))((vehicle_number[2]>57)&&(vehicle_number[2]<128))((vehicle_number[4]>-1)&&(vehicle_number[4]<65))((vehicle_number[4]>90)&&(vehicle_number[4]<128)))<br>
+{<br>
+  goto enter_carefully;  <br>
+}<br>
+}<br>
+if(vehicle_number_length==10)<br>
+{<br>
+if((count==0)&&((vehicle_number[2]==48)&&(vehicle_number[3]==48))((vehicle_number[6]==48)&&(vehicle_number[7]==48)&&(vehicle_number[8]==48)&&(vehicle_number[9]==48))(vehicle_number[2]>-1)&&(vehicle_number[2]<48)(vehicle_number[2]>57)&&(vehicle_number[2]<128)(vehicle_number[4]>-1)&&(vehicle_number[4]<65)(vehicle_number[4]>90)&&(vehicle_number[4]<128)(vehicle_number[5]>-1)&&(vehicle_number[5]<65)(vehicle_number[5]>90)&&(vehicle_number[5]<128)((vehicle_number[2]==48)&&(vehicle_number[3]>64&&vehicle_number[3]<91)))<br>
+goto enter_carefully; <br> 
+}<br>
+}<br>
+if(vehicle_number_length==9)<br>
+{<br>
+  if(((vehicle_number[5]>-1)&&(vehicle_number[5]<48))((vehicle_number[5]>57)&&(vehicle_number[5]<128))((vehicle_number[6]>-1)&&(vehicle_number[6]<48))((vehicle_number[6]>57)&&(vehicle_number[6]<128))((vehicle_number[7]>-1)&&(vehicle_number[7]<48))((vehicle_number[7]>57)&&(vehicle_number[7]<128))((vehicle_number[8]>-1)&&(vehicle_number[8]<48))((vehicle_number[8]>57)&&(vehicle_name[8]<128))((vehicle_number[0]>47)&&(vehicle_number[0]<58))((vehicle_number[1]>47)&&(vehicle_number[1]<58))((vehicle_number[2]==48)&&((vehicle_number[3]>64)&&(vehicle_number[3]<91))))<br>
+{<br>
+  goto enter_carefully;<br>
+}<br>
+}<br>
+if(vehicle_number_length==10)<br>
+{<br>
+  if(((vehicle_number[6]>-1)&&(vehicle_number[6]<48))((vehicle_number[6]>57)&&(vehicle_number[6]<128))((vehicle_number[7]>-1)&&(vehicle_number[7]<48))((vehicle_number[7]>57)&&(vehicle_number[7]<128))((vehicle_number[8]>-1)&&(vehicle_number[8]<48))((vehicle_number[8]>57)&&(vehicle_number[8]<128))((vehicle_number[9]>-1)&&(vehicle_number[9]<48))((vehicle_number[9]>57)&&(vehicle_name[9]<128))((vehicle_number[0]>47)&&(vehicle_number[0]<58))((vehicle_number[1]>47)&&(vehicle_number[1]<58))((vehicle_number[2]==48)&&(vehicle_number[3]==48)))<br>
+  goto enter_carefully;<br>
+}<br>
+}<br>
+if((count==0)&&(vehicle_number_length==9))<br>
+  {    <br>
+  if(((vehicle_number[0]==65)&&(vehicle_number[1]==80))((vehicle_number[0]==65)&&(vehicle_number[1]==82))((vehicle_number[0]==65)&&(vehicle_number[1]==83))((vehicle_number[0]==66)&&(vehicle_number[1]==82))((vehicle_number[0]==67)&&(vehicle_number[1]==71))((vehicle_number[0]==68)&&(vehicle_number[1]==76))((vehicle_number[0]==71)&&(vehicle_number[1]==65))((vehicle_number[0]==71)&&(vehicle_number[1]==74))((vehicle_number[0]==72)&&(vehicle_number[1]==82))((vehicle_number[0]==72)&&(vehicle_number[1]==80))((vehicle_number[0]==74)&&(vehicle_number[1]==75))((vehicle_number[0]==74)&&(vehicle_number[1]==72))((vehicle_number[0]==75)&&(vehicle_number[1]==65))((vehicle_number[0]==75)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==80))((vehicle_number[0]==77)&&(vehicle_number[1]==72))((vehicle_number[0]==77)&&(vehicle_number[1]==78))((vehicle_number[0]==77)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==90))((vehicle_number[0]==78)&&(vehicle_number[1]==76))((vehicle_number[0]==79)&&(vehicle_number[1]==68))((vehicle_number[0]==79)&&(vehicle_number[1]==82))((vehicle_number[0]==80)&&(vehicle_number[1]==89))((vehicle_number[0]==80)&&(vehicle_number[1]==66))((vehicle_number[0]==82)&&(vehicle_number[1]==74))((vehicle_number[0]==83)&&(vehicle_number[1]==75))((vehicle_number[0]==84)&&(vehicle_number[1]==78))((vehicle_number[0]==84)&&(vehicle_number[1]==83))((vehicle_number[0]==84)&&(vehicle_number[1]==82))((vehicle_number[0]==85)&&(vehicle_number[1]==80))<br>
+  ((vehicle_number[0]==85)&&(vehicle_number[1]==75))((vehicle_number[0]==85)&&(vehicle_number[1]==65))((vehicle_number[0]==87)&&(vehicle_number[1]==66))((vehicle_number[0]==65)&&(vehicle_number[1]==78))((vehicle_number[0]==67)&&(vehicle_number[1]==72))((vehicle_number[0]==68)&&(vehicle_number[1]==78))((vehicle_number[0]==68)&&(vehicle_number[1]==68))((vehicle_number[0]==76)&&(vehicle_number[1]==65))((vehicle_number[0]==79)&&(vehicle_number[1]==84))((vehicle_number[4]>64)&&(vehicle_number[4]<91)))<br>
+  {<br>
+if(((vehicle_number[3]>64)&&(vehicle_number[3]<91)))<br>
+      {<br>
+      if(((vehicle_number[0]==65)&&(vehicle_number[1]==80))((vehicle_number[0]==65)&&(vehicle_number[1]==82))((vehicle_number[0]==65)&&(vehicle_number[1]==83))((vehicle_number[0]==66)&&(vehicle_number[1]==82))((vehicle_number[0]==67)&&(vehicle_number[1]==71))((vehicle_number[0]==68)&&(vehicle_number[1]==76))((vehicle_number[0]==71)&&(vehicle_number[1]==65))((vehicle_number[0]==71)&&(vehicle_number[1]==74))((vehicle_number[0]==72)&&(vehicle_number[1]==82))((vehicle_number[0]==72)&&(vehicle_number[1]==80))((vehicle_number[0]==74)&&(vehicle_number[1]==75))((vehicle_number[0]==74)&&(vehicle_number[1]==72))((vehicle_number[0]==75)&&(vehicle_number[1]==65))((vehicle_number[0]==75)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==80))((vehicle_number[0]==77)&&(vehicle_number[1]==72))((vehicle_number[0]==77)&&(vehicle_number[1]==78))((vehicle_number[0]==77)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==90))((vehicle_number[0]==78)&&(vehicle_number[1]==76))((vehicle_number[0]==79)&&(vehicle_number[1]==68))((vehicle_number[0]==79)&&(vehicle_number[1]==82))((vehicle_number[0]==80)&&(vehicle_number[1]==89))((vehicle_number[0]==80)&&(vehicle_number[1]==66))((vehicle_number[0]==82)&&(vehicle_number[1]==74))((vehicle_number[0]==83)&&(vehicle_number[1]==75))((vehicle_number[0]==84)&&(vehicle_number[1]==78))((vehicle_number[0]==84)&&(vehicle_number[1]==83))((vehicle_number[0]==84)&&(vehicle_number[1]==82))((vehicle_number[0]==85)&&(vehicle_number[1]==80))((vehicle_number[0]==85)&&(vehicle_number[1]==75))((vehicle_number[0]==85)&&(vehicle_number[1]==65))((vehicle_number[0]==87)&&(vehicle_number[1]==66))((vehicle_number[0]==65)&&(vehicle_number[1]==78))((vehicle_number[0]==67)&&(vehicle_number[1]==72))((vehicle_number[0]==68)&&(vehicle_number[1]==78))((vehicle_number[0]==68)&&(vehicle_number[1]==68))((vehicle_number[0]==76)&&(vehicle_number[1]==65))((vehicle_number[0]==79)&&(vehicle_number[1]==84))((vehicle_number[4]>64)&&(vehicle_number[4]<91)))<br>
+  {<br>
+     enter_number_carefully_1:<br>
+printf("enter vehicle owner mobile number :");<br>
+scanf("%lld",&owner_mobile_number);<br>
+if((owner_mobile_number<1000000000)||(owner_mobile_number>9999999999))<br>
+{<br>
+  goto enter_number_carefully_1;<br>
+}<br>
+    }<br>
+}<br>
+else if((vehicle_number[3]>47)&&(vehicle_number[3]<58))<br>
+{
+    if(((vehicle_number[0]==65)&&(vehicle_number[1]==80))((vehicle_number[0]==65)&&(vehicle_number[1]==82))((vehicle_number[0]==65)&&(vehicle_number[1]==83))((vehicle_number[0]==66)&&(vehicle_number[1]==82))((vehicle_number[0]==67)&&(vehicle_number[1]==71))((vehicle_number[0]==68)&&(vehicle_number[1]==76))((vehicle_number[0]==71)&&(vehicle_number[1]==65))((vehicle_number[0]==71)&&(vehicle_number[1]==74))((vehicle_number[0]==72)&&(vehicle_number[1]==82))((vehicle_number[0]==72)&&(vehicle_number[1]==80))((vehicle_number[0]==74)&&(vehicle_number[1]==75))((vehicle_number[0]==74)&&(vehicle_number[1]==72))((vehicle_number[0]==75)&&(vehicle_number[1]==65))((vehicle_number[0]==75)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==80))((vehicle_number[0]==77)&&(vehicle_number[1]==72))((vehicle_number[0]==77)&&(vehicle_number[1]==78))((vehicle_number[0]==77)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==90))((vehicle_number[0]==78)&&(vehicle_number[1]==76))((vehicle_number[0]==79)&&(vehicle_number[1]==68))((vehicle_number[0]==79)&&(vehicle_number[1]==82))((vehicle_number[0]==80)&&(vehicle_number[1]==89))((vehicle_number[0]==80)&&(vehicle_number[1]==66))((vehicle_number[0]==82)&&(vehicle_number[1]==74))((vehicle_number[0]==83)&&(vehicle_number[1]==75))((vehicle_number[0]==84)&&(vehicle_number[1]==78))((vehicle_number[0]==84)&&(vehicle_number[1]==83))((vehicle_number[0]==84)&&(vehicle_number[1]==82))((vehicle_number[0]==85)&&(vehicle_number[1]==80))((vehicle_number[0]==85)&&(vehicle_number[1]==75))((vehicle_number[0]==85)&&(vehicle_number[1]==65))((vehicle_number[0]==87)&&(vehicle_number[1]==66))((vehicle_number[0]==65)&&(vehicle_number[1]==78))((vehicle_number[0]==67)&&(vehicle_number[1]==72))((vehicle_number[0]==68)&&(vehicle_number[1]==78))((vehicle_number[0]==68)&&(vehicle_number[1]==68))((vehicle_number[0]==76)&&(vehicle_number[1]==65))((vehicle_number[0]==79)&&(vehicle_number[1]==84))&&((vehicle_number[4]>64)&&(vehicle_number[4]<91))){<br>
+        {
+          enter_number_carefully_2:<br>
+        printf("enter vehicle owner mobile number :");<br>
+        scanf("%d",&owner_mobile_number);<br>
+        if((owner_mobile_number<1000000000)(owner_mobile_number>9999999999))<br>
+{<br>
+goto enter_number_carefully_2;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+else<br>
+{<br>
+  goto enter_carefully;<br>
+}<br>
+}<br>
+}<br>
+else if((count==0)&&(vehicle_number_length==10))<br>
+{<br>
+if(((vehicle_number[3]>64)&&(vehicle_number[3]<91)))<br>
+      {<br>
+      if(((vehicle_number[0]==65)&&(vehicle_number[1]==80))((vehicle_number[0]==65)&&(vehicle_number[1]==82))((vehicle_number[0]==65)&&(vehicle_number[1]==83))((vehicle_number[0]==66)&&(vehicle_number[1]==82))((vehicle_number[0]==67)&&(vehicle_number[1]==71))((vehicle_number[0]==68)&&(vehicle_number[1]==76))((vehicle_number[0]==71)&&(vehicle_number[1]==65))((vehicle_number[0]==71)&&(vehicle_number[1]==74))((vehicle_number[0]==72)&&(vehicle_number[1]==82))((vehicle_number[0]==72)&&(vehicle_number[1]==80))((vehicle_number[0]==74)&&(vehicle_number[1]==75))((vehicle_number[0]==74)&&(vehicle_number[1]==72))((vehicle_number[0]==75)&&(vehicle_number[1]==65))((vehicle_number[0]==75)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==80))((vehicle_number[0]==77)&&(vehicle_number[1]==72))((vehicle_number[0]==77)&&(vehicle_number[1]==78))((vehicle_number[0]==77)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==90))((vehicle_number[0]==78)&&(vehicle_number[1]==76))((vehicle_number[0]==79)&&(vehicle_number[1]==68))((vehicle_number[0]==79)&&(vehicle_number[1]==82))((vehicle_number[0]==80)&&(vehicle_number[1]==89))((vehicle_number[0]==80)&&(vehicle_number[1]==66))((vehicle_number[0]==82)&&(vehicle_number[1]==74))((vehicle_number[0]==83)&&(vehicle_number[1]==75))((vehicle_number[0]==84)&&(vehicle_number[1]==78))((vehicle_number[0]==84)&&(vehicle_number[1]==83))((vehicle_number[0]==84)&&(vehicle_number[1]==82))((vehicle_number[0]==85)&&(vehicle_number[1]==80))((vehicle_number[0]==85)&&(vehicle_number[1]==75))((vehicle_number[0]==85)&&(vehicle_number[1]==65))((vehicle_number[0]==87)&&(vehicle_number[1]==66))((vehicle_number[0]==65)&&(vehicle_number[1]==78))((vehicle_number[0]==67)&&(vehicle_number[1]==72))((vehicle_number[0]==68)&&(vehicle_number[1]==78))((vehicle_number[0]==68)&&(vehicle_number[1]==68))((vehicle_number[0]==76)&&(vehicle_number[1]==65))((vehicle_number[0]==79)&&(vehicle_number[1]==84))((vehicle_number[4]>64)&&(vehicle_number[4]<91)))<br>
+  {<br>
+     enter_number_carefully_3:<br>
+printf("enter vehicle owner mobile number :");<br>
+scanf("%lld",&owner_mobile_number);<br>
+if((owner_mobile_number<1000000000)(owner_mobile_number>9999999999))<br>
+{<br>
+  goto enter_number_carefully_3;<br>
+}<br>
+}<br>
+}<br>
+else if((vehicle_number[3]>47)&&(vehicle_number[3]<58))<br>
+{<br>
+if(((vehicle_number[0]==65)&&(vehicle_number[1]==80))((vehicle_number[0]==65)&&(vehicle_number[1]==82))((vehicle_number[0]==65)&&(vehicle_number[1]==83))((vehicle_number[0]==66)&&(vehicle_number[1]==82))((vehicle_number[0]==67)&&(vehicle_number[1]==71))((vehicle_number[0]==68)&&(vehicle_number[1]==76))((vehicle_number[0]==71)&&(vehicle_number[1]==65))((vehicle_number[0]==71)&&(vehicle_number[1]==74))((vehicle_number[0]==72)&&(vehicle_number[1]==82))((vehicle_number[0]==72)&&(vehicle_number[1]==80))((vehicle_number[0]==74)&&(vehicle_number[1]==75))((vehicle_number[0]==74)&&(vehicle_number[1]==72))((vehicle_number[0]==75)&&(vehicle_number[1]==65))((vehicle_number[0]==75)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==80))((vehicle_number[0]==77)&&(vehicle_number[1]==72))((vehicle_number[0]==77)&&(vehicle_number[1]==78))((vehicle_number[0]==77)&&(vehicle_number[1]==76))((vehicle_number[0]==77)&&(vehicle_number[1]==90))((vehicle_number[0]==78)&&(vehicle_number[1]==76))((vehicle_number[0]==79)&&(vehicle_number[1]==68))((vehicle_number[0]==79)&&(vehicle_number[1]==82))((vehicle_number[0]==80)&&(vehicle_number[1]==89))((vehicle_number[0]==80)&&(vehicle_number[1]==66))((vehicle_number[0]==82)&&(vehicle_number[1]==74))((vehicle_number[0]==83)&&(vehicle_number[1]==75))((vehicle_number[0]==84)&&(vehicle_number[1]==78))((vehicle_number[0]==84)&&(vehicle_number[1]==83))((vehicle_number[0]==84)&&(vehicle_number[1]==82))((vehicle_number[0]==85)&&(vehicle_number[1]==80))((vehicle_number[0]==85)&&(vehicle_number[1]==75))((vehicle_number[0]==85)&&(vehicle_number[1]==65))((vehicle_number[0]==87)&&(vehicle_number[1]==66))((vehicle_number[0]==65)&&(vehicle_number[1]==78))((vehicle_number[0]==67)&&(vehicle_number[1]==72))((vehicle_number[0]==68)&&(vehicle_number[1]==78))((vehicle_number[0]==68)&&(vehicle_number[1]==68))((vehicle_number[0]==76)&&(vehicle_number[1]==65))((vehicle_number[0]==79)&&(vehicle_number[1]==84))&&((vehicle_number[4]>64)&&(vehicle_number[4]<91))){<br>
+{<br>
+  enter_number_carefully_4:<br>
+printf("enter vehicle owner mobile number :");<br>
+scanf("%d",&owner_mobile_number);<br>
+if((owner_mobile_number<1000000000)(owner_mobile_number>9999999999))<br>
+{<br>
+goto enter_number_carefully_4;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+else<br>
+{<br>
+  printf("we do not park this vehicle\n");<br>
+  time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+}<br>
+if(strcmp(vehicle_name,car)==0)<br>
+{<br>
+car_information=fopen("car_park_details","r");<br>
+fread(CAR,sizeof(struct car_vehicle),information_of_space_cost[1],car_information);<br>
+fclose(car_information);<br>
+for(car_space=0;car_space<information_of_space_cost[1];car_space++)<br>
+{<br>
+  if(CAR[car_space].car_owner_mobile_number==owner_mobile_number)<br>
+  {<br>
+    break;<br>
+  }<br>
+}<br>
+if(CAR[car_space].car_owner_mobile_number==owner_mobile_number)<br>
+{<br>
+printf("your car was parked in car_%d\n",car_space+1);<br>
+time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+CAR[car_space].car_owner_mobile_number=0;<br>
+for(g=0;g<12;g++)<br>
+{<br>
+CAR[car_space].car_number[g]=vehicle_no[g];  <br>
+}<br>
+for(h=0;h<30;h++)<br>
+{<br>
+CAR[car_space].car_owner_name[h]=name[h];  <br>
+}<br>
+ days=(s-CAR[car_space].car_seconds)/(24*3600);<br>
+ if(days==0)<br>
+ {<br>
+ printf("bill for 1 days parking is %d Rs.",information_of_space_cost[2]);  <br>
+ }<br>
+ else<br>
+ {<br>
+ printf("bill for %d days parking is %ld Rs.",days,days*information_of_space_cost[2]);<br>
+}<br>
+}<br>
+else<br>
+{<br>
+  for(car_space=0;car_space<information_of_space_cost[1];car_space++)<br>
+  {<br>
+    if(CAR[car_space].car_owner_mobile_number==0)<br>
+    {<br>
+      break;<br>
+    }<br>
+  }<br>
+  CAR[car_space].car_owner_mobile_number=owner_mobile_number;<br>
+  for(g=0;g<12;g++)<br>
+  {<br>
+    CAR[car_space].car_number[g]=vehicle_number[g];<br>
+  }<br>
+  for(h=0;h<30;h++)<br>
+  {<br><br>
+    CAR[car_space].car_owner_name[h]=owner_name[h];<br>
+  }<br>
+  printf("park your car in car_%d\n",car_space+1);<br>
+  time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+        CAR[car_space].car_seconds=s;<br>
+}<br>
+car_information=fopen("car_park_details","wb");<br>
+fwrite(CAR,sizeof(struct car_vehicle),information_of_space_cost[1],car_information);<br>
+fclose(car_information);  <br>
+}<br><br>
+if(strcmp(vehicle_name,truck)==0)<br>
+{<br>
+truck_information=fopen("truck_park_details","r");<br>
+fread(TRUCK,sizeof(struct truck_vehicle),information_of_space_cost[3],truck_information);<br>
+fclose(truck_information);<br><br>
+for(truck_space=0;truck_space<information_of_space_cost[3];truck_space++)<br>
+{<br>
+  if(TRUCK[truck_space].truck_owner_mobile_number==owner_mobile_number)<br>
+  {<br>
+    break;<br>
+  }<br>
+}<br>
+if(TRUCK[truck_space].truck_owner_mobile_number==owner_mobile_number)<br>
+{<br>
+printf("your truck was parked in truck_%d\n",truck_space+1);<br>
+time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+TRUCK[truck_space].truck_owner_mobile_number=0;<br>
+for(g=0;g<12;g++)<br>
+{<br>
+TRUCK[truck_space].truck_number[g]=vehicle_no[g];  <br>
+}<br>
+for(h=0;h<30;h++)<br>
+{<br>
+TRUCK[truck_space].truck_owner_name[h]=name[h];  <br>
+}<br>
+days=(s-TRUCK[truck_space].truck_seconds)/(24*3600);<br>
+ if(days==0)<br>
+ {<br>
+ printf("bill for 1 days parking is %d Rs.",information_of_space_cost[4]);  <br>
+ }<br>
+ else<br>
+ {<br>
+ printf("bill for %d days parking is %ld Rs.",days,days*information_of_space_cost[4]);<br>
+}  <br>
+}<br>
+else<br>
+{<br>
+  for(truck_space=0;truck_space<information_of_space_cost[3];truck_space++)<br>
+  {<br>
+    if(TRUCK[truck_space].truck_owner_mobile_number==0)<br>
+    {<br>
+      break;<br>
+    }<br>
+  }<br>
+  TRUCK[truck_space].truck_owner_mobile_number=owner_mobile_number;<br>
+  for(g=0;g<12;g++)<br>
+  {<br>
+    TRUCK[truck_space].truck_number[g]=vehicle_number[g];<br>
+  }<br>
+  for(h=0;h<30;h++)<br>
+  {<br>
+    TRUCK[truck_space].truck_owner_name[h]=owner_name[h];<br>
+  }<br>
+  printf("park your truck in truck_%d\n",truck_space+1);<br>
+  time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+        TRUCK[truck_space].truck_seconds=s;<br>
+}<br>
+truck_information=fopen("truck_park_details","wb");<br>
+fwrite(TRUCK,sizeof(struct truck_vehicle),information_of_space_cost[3],truck_information);<br>
+fclose(truck_information);  <br>
+}<br>
+if(strcmp(vehicle_name,bike)==0)<br>
+{<br>
+bike_information=fopen("bike_park_details","r");<br>
+fread(BIKE,sizeof(struct bike_vehicle),information_of_space_cost[5],bike_information);<br>
+fclose(bike_information);<br>
+for(bike_space=0;bike_space<information_of_space_cost[5];bike_space++)<br>
+{<br>
+  if(BIKE[bike_space].bike_owner_mobile_number==owner_mobile_number)<br>
+  {<br>
+    break;<br>
+  }<br>
+}<br>
+if(BIKE[bike_space].bike_owner_mobile_number==owner_mobile_number)<br>
+{<br>
+printf("your bike was parked in bike_%d\n",bike_space+1);<br>
+time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+BIKE[bike_space].bike_owner_mobile_number=0;<br>
+for(g=0;g<12;g++)<br>
+{<br>
+BIKE[bike_space].bike_number[g]=vehicle_no[g];  <br>
+}<br>
+for(h=0;h<30;h++)<br>
+{<br>
+BIKE[bike_space].bike_owner_name[h]=name[h];  <br>
+}<br>
+days=(s-BIKE[bike_space].bike_seconds)/(24*3600);<br>
+ if(days==0)<br>
+ {<br>
+ printf("bill for 1 days parking is %d Rs.",information_of_space_cost[6]);  <br>
+ }<br>
+ else<br>
+ {<br>
+    printf("bill for %d days parking is %ld Rs.",days,days*information_of_space_cost[6]);<br>
+}  <br>
+}<br>
+else<br>
+{<br>
+  for(bike_space=0;bike_space<information_of_space_cost[5];bike_space++)<br>
+  {<br>
+    if(BIKE[bike_space].bike_owner_mobile_number==0)<br>
+    {<br>
+      break;<br>
+    }<br>
+  }<br>
+  BIKE[bike_space].bike_owner_mobile_number=owner_mobile_number;<br>
+  for(g=0;g<12;g++)<br>
+  {<br>
+    BIKE[bike_space].bike_number[g]=vehicle_number[g];<br>
+  }<br>
+  for(h=0;h<30;h++)<br>
+  {<br>
+    BIKE[bike_space].bike_owner_name[h]=owner_name[h];<br>
+  }<br>
+  printf("park your bike in bike_%d\n",bike_space+1);<br>
+  time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+        BIKE[bike_space].bike_seconds=s;<br>
+}<br>
+bike_information=fopen("bike_park_details","wb");<br>
+fwrite(BIKE,sizeof(struct bike_vehicle),information_of_space_cost[5],bike_information);<br>
+fclose(bike_information);  <br>
+}<br>
+if(strcmp(vehicle_name,bus)==0)<br>
+{<br>
+bus_information=fopen("bus_park_details","r");<br>
+fread(BUS,sizeof(struct bus_vehicle),information_of_space_cost[7],bus_information);<br>
+fclose(bus_information);<br>
+for(bus_space=0;bus_space<information_of_space_cost[7];bus_space++)<br>
+{<br>
+  if(BUS[bus_space].bus_owner_mobile_number==owner_mobile_number)<br>
+  {<br>
+    break;<br>
+  }<br>
+}<br>
+if(BUS[bus_space].bus_owner_mobile_number==owner_mobile_number)<br>
+{<br>
+printf("your bus was parked in bus_%d\n",bus_space+1);<br>
+time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+BUS[bus_space].bus_owner_mobile_number=0;<br>
+for(g=0;g<12;g++)<br>
+{<br>
+BUS[bus_space].bus_number[g]=vehicle_no[g];<br>  
+}<br>
+for(h=0;h<30;h++)<br>
+{<br>
+BUS[bus_space].bus_owner_name[h]=name[h];  <br>
+}<br>
+days=(s-CAR[car_space].car_seconds)/(24*3600);<br>
+ if(days==0)<br>
+ {<br>
+ printf("bill for 1 days parking is %d Rs.",information_of_space_cost[8]);  <br>
+ }<br>
+ else<br>
+ {<br>
+ printf("bill for %d days parking is %ld Rs.",days,days*information_of_space_cost[8]);<br>
+}  <br>
+}<br>
+else<br>
+{<br>
+  for(bus_space=0;bus_space<information_of_space_cost[7];bus_space++)<br>
+  {<br>
+    if(BUS[bus_space].bus_owner_mobile_number==0)<br>
+    {<br>
+      break;<br>
+    }<br>
+  }<br>
+  BUS[bus_space].bus_owner_mobile_number=owner_mobile_number;<br>
+  for(g=0;g<12;g++)<br>
+  {<br>
+    BUS[bus_space].bus_number[g]=vehicle_number[g];<br>
+  }<br>
+  for(h=0;h<30;h++)<br>
+  {<br>
+    BUS[bus_space].bus_owner_name[h]=owner_name[h];<br>
+  }<br>
+  printf("park your bus in bus_%d\n",bus_space+1);<br>
+  time_t s;<br>
+        struct tm* curr_time;<br>
+        s=time(NULL);<br>
+        curr_time = localtime(&s);<br>
+        printf("%02d:%02d:%02d\t\t",curr_time->tm_hour,curr_time->tm_min,curr_time->tm_sec);<br>
+        strftime(date_string,20,"%d-%m-%y",curr_time);<br>
+        printf("%s\n",date_string);<br>
+        BUS[bus_space].bus_seconds=s;<br>
+}<br>
+bus_information=fopen("bus_park_details","wb");<br>
+fwrite(BUS,sizeof(struct bus_vehicle),information_of_space_cost[7],bus_information);<br>
+fclose(bus_information);<br>  
+}<br>
+}<br>
+return 0;<br>
+}
+</div>
+<script>
+  const button = document.getElementById("myButton");
+  const content = document.getElementById("content");
+  
+  button.addEventListener("click", function() {
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  });
+  </script>
+</body>
+</html>
